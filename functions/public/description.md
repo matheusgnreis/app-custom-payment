@@ -1,3 +1,4 @@
-# My Awesome E-Com Plus App
+# Pagamento personalizado
 
-Somethings about my app and what it does...
+Ofereça formas de pagamento com instruções customizadas em texto ou HTML no checkout.
+Pode ser usado, por exemplo, para depósito bancário, cheque ou pagamento na entrega.
