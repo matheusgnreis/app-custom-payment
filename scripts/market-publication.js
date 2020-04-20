@@ -1,6 +1,5 @@
 require('dotenv').config()
 
-const path = require('path')
 const { MARKET_TOKEN } = process.env
 
 if (!MARKET_TOKEN) {
@@ -8,11 +7,16 @@ if (!MARKET_TOKEN) {
   process.exit(1)
 }
 
+const path = require('path')
 const fs = require('fs')
 const https = require('https')
 const { baseUri } = require('./_constants')
 const { app } = require('../ecomplus-market.json')
 const storeApp = require('../assets/application.json')
+
+if (!storeApp.version_date) {
+  storeApp.version_date = new Date().toISOString()
+}
 
 app.id = storeApp.app_id
 app.store_app = storeApp
