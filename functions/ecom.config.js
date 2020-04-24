@@ -50,11 +50,8 @@ const app = {
    * Uncomment only the resources/methods your app may need to consume through Store API.
    */
   auth_scope: {
-    'stores/me': [
-      'GET'            // Read store info
-    ],
     procedures: [
-      'POST'           // Create procedures to receive webhooks
+      //  'POST'           // Create procedures to receive webhooks
     ],
     products: [
       // 'GET',           // Read products with public and private fields
