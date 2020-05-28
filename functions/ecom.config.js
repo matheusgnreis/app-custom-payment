@@ -141,7 +141,7 @@ const app = {
     payment_options: {
       schema: {
         type: 'array',
-        title: 'Opções de Pagamento Customizadas',
+        title: 'Opções de pagamento customizadas',
         description: 'Configure e oferença novas opções que pagamento em sua loja',
         uniqueItems: true,
         items: {
@@ -225,10 +225,30 @@ const app = {
               description: 'Valor mínimo para habilitar forma de pagamento',
               title: 'Valor mínimo'
             },
+            zip_range: {
+              title: 'Faixa de CEP',
+              description: 'Limitar forma de pagamento por endereço do cliente',
+              type: 'object',
+              required: ['min', 'max'],
+              properties: {
+                min: {
+                  type: 'integer',
+                  minimum: 10000,
+                  maximum: 999999999,
+                  title: 'CEP inicial'
+                },
+                max: {
+                  type: 'integer',
+                  minimum: 10000,
+                  maximum: 999999999,
+                  title: 'CEP final'
+                }
+              }
+            },
             enabled: {
               type: 'boolean',
               title: 'Habilitado',
-              default: false
+              default: true
             }
           }
         }
