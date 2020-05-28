@@ -30,10 +30,24 @@ exports.post = ({ appSdk }, req, res) => {
   }
 
   if (config.payment_options && config.payment_options.length) {
-    config.payment_options.forEach(options => {
-      const { label, icon, text, discount, enabled } = options
-      if (enabled && enabled === true) {
-        if (options.min_amount && (amount.total < options.min_amount)) {
+    config.payment_options.forEach(paymentOption => {
+      if (paymentOption.zip_range) {
+        // payment option for specific addresses only
+        let zip
+        const { customer } = params
+        if (customer && customer.addresses) {
+          const address = customer.addresses.find(addr => addr.default) || customer.addresses[0]
+          zip = address && address.zip
+        }
+        if (!zip || paymentOption.zip_range.min > zip || paymentOption.zip_range.max < zip) {
+          // zip code condition not satisfied
+          return
+        }
+      }
+
+      const { label, icon, text, discount, enabled } = paymentOption
+      if (enabled !== false) {
+        if (paymentOption.min_amount && (amount.total < paymentOption.min_amount)) {
           return
         }
 
@@ -42,7 +56,7 @@ exports.post = ({ appSdk }, req, res) => {
           icon,
           text,
           discount,
-          payment_method: options.payment_method,
+          payment_method: paymentOption.payment_method,
           type: 'payment'
         })
       }
