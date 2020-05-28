@@ -33,15 +33,14 @@ exports.post = ({ appSdk }, req, res) => {
     config.payment_options.forEach(paymentOption => {
       if (paymentOption.zip_range) {
         // payment option for specific addresses only
-        let zip
         const { customer } = params
         if (customer && customer.addresses) {
           const address = customer.addresses.find(addr => addr.default) || customer.addresses[0]
-          zip = address && address.zip
-        }
-        if (!zip || paymentOption.zip_range.min > zip || paymentOption.zip_range.max < zip) {
-          // zip code condition not satisfied
-          return
+          const zip = address && address.zip
+          if (zip && (paymentOption.zip_range.min > zip || paymentOption.zip_range.max < zip)) {
+            // zip code condition not satisfied
+            return
+          }
         }
       }
 
