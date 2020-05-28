@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/ecomplus/application-starter/compare/v1.1.0...v1.1.1) (2020-05-28)
+
+
+### Bug Fixes
+
+* **list-payments:** relaxing zip condition filter ([8d837fd](https://github.com/ecomplus/application-starter/commit/8d837fd87bfac444445633700f515d9e6e6ecd1f))
+
 ## [1.1.0](https://github.com/ecomplus/application-starter/compare/v1.0.1...v1.1.0) (2020-05-28)
 
 
