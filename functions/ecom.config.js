@@ -151,7 +151,8 @@ const app = {
             label: {
               type: 'string',
               maxLength: 50,
-              title: 'Nome da forma de pagamento'
+              title: 'Rótulo',
+              description: 'Nome da forma de pagamento exibido para os clientes'
             },
             text: {
               type: 'string',
@@ -181,16 +182,15 @@ const app = {
                     'loyalty_points',
                     'other'
                   ],
-                  description: 'Código da forma de pagamento',
-                  title: 'Codigo de pagamento'
+                  title: 'Código do método de pagamento'
                 },
                 name: {
                   type: 'string',
                   maxLength: 200,
-                  description: 'Descrição para a forma de pagamento',
-                  title: 'Nome'
+                  title: 'Nome do método de pagamento'
                 }
-              }
+              },
+              title: 'Método de pagamento'
             },
             discount: {
               type: 'object',
