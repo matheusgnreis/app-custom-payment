@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/ecomplus/application-starter/compare/v1.0.1...v1.1.0) (2020-05-28)
+
+
+### Features
+
+* **admin-settings:** add 'zip_range' to payment options config ([7967f9d](https://github.com/ecomplus/application-starter/commit/7967f9d30151984b78f2080a1680d2e20bf06671))
+* **list-payment:** optionally handling address specific payment option ([3fa172e](https://github.com/ecomplus/application-starter/commit/3fa172e042e93c17c09fb7aaeb966376be8bf6b5))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#10](https://github.com/ecomplus/application-starter/issues/10)) ([2954b8a](https://github.com/ecomplus/application-starter/commit/2954b8aad62983e60359776aace955154cb07ac6))
+* **setup:** do not disable updates on refresh-tokens route ([a388827](https://github.com/ecomplus/application-starter/commit/a3888273958ae09136f2af9923be5f6771c6f9e8))
+
 ### [1.0.1](https://github.com/ecomplus/application-starter/compare/v1.0.0...v1.0.1) (2020-04-24)
 
 
