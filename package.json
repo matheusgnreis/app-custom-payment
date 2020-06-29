@@ -1,7 +1,7 @@
 {
   "name": "@ecomplus/app-custom-payment",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "E-Com Plus app for custom payment methods",
   "main": "functions/index.js",
   "scripts": {
@@ -36,14 +36,14 @@
   "homepage": "https://github.com/ecomplus/application-starter#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "firebase-tools": "^8.0.3"
+    "firebase-tools": "^8.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "husky": "^4.2.5",
-    "standard": "^14.3.3",
-    "standard-version": "^7.1.0"
+    "standard": "^14.3.4",
+    "standard-version": "^8.0.0"
   },
   "husky": {
     "hooks": {
