@@ -45,7 +45,7 @@ exports.post = ({ appSdk }, req, res) => {
               // default discount option
               const { value } = discount
               response.discount_option = {
-                label: config.discount_option_label,
+                label,
                 value
               }
               // specify the discount type and min amount is optional
