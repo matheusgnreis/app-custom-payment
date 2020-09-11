@@ -58,7 +58,7 @@ exports.post = ({ appSdk }, req, res) => {
           }
         }
 
-        response.payment_gateways.push()
+        response.payment_gateways.push(paymentGateway)
       }
     })
   }
