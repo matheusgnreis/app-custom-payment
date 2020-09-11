@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/ecomplus/application-starter/compare/v1.1.1...v1.2.0) (2020-09-11)
+
+
+### Features
+
+* **discount:** add option for non-cumulative discount ([#20](https://github.com/ecomplus/application-starter/issues/20)) ([cf4a92e](https://github.com/ecomplus/application-starter/commit/cf4a92e7c650dcff6a1d37c5a225ccada8a29aaf))
+
+
+### Bug Fixes
+
+* **apply-discounts:** fix setting discount option and checking cumulative ([#19](https://github.com/ecomplus/application-starter/issues/19)) ([ee9b7b6](https://github.com/ecomplus/application-starter/commit/ee9b7b63b8352619d2cd5d4dce85981209c3e1ab))
+* **deps:** update @ecomplus/application-sdk and firebase-admin major ([f46590f](https://github.com/ecomplus/application-starter/commit/f46590fca10a02869bfdb3e7e6a03604ec2a665e))
+* **deps:** update @ecomplus/application-sdk firestore verison ([1c2d4ee](https://github.com/ecomplus/application-starter/commit/1c2d4ee570fd34289647d78880439dfbfcca07e8))
+* **list-payments:** fix pushing payment gateway objects ([466db39](https://github.com/ecomplus/application-starter/commit/466db398de068145896ffdefd0dc1764d3b18b5d))
+* **list-payments:** payment method label for default discount option ([e7084db](https://github.com/ecomplus/application-starter/commit/e7084db854eb6bcb7195b3b09581b2d4e52d3869))
+* description text ([d5fd4f9](https://github.com/ecomplus/application-starter/commit/d5fd4f9f31f5c3164d83267256296ec98db392d3))
+
 ### [1.1.1](https://github.com/ecomplus/application-starter/compare/v1.1.0...v1.1.1) (2020-05-28)
 
 
