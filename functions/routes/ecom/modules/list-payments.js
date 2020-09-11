@@ -9,23 +9,24 @@ exports.post = ({ appSdk }, req, res) => {
   }
 
   const amount = params.amount || {}
-
-  // calculate discount value
-  const { discount } = config
-  if (discount && discount.value > 0) {
-    if (discount.apply_at !== 'freight') {
-      // default discount option
-      const { value } = discount
-      response.discount_option = {
-        label: config.discount_option_label,
-        value
-      }
-      // specify the discount type and min amount is optional
-      ;['type', 'min_amount'].forEach(prop => {
-        if (discount[prop]) {
-          response.discount_option[prop] = discount[prop]
+  if (!amount.discount || config.cumulative_discount !== false) {
+    // calculate discount value
+    const { discount } = config
+    if (discount && discount.value > 0) {
+      if (discount.apply_at !== 'freight') {
+        // default discount option
+        const { value } = discount
+        response.discount_option = {
+          label: config.discount_option_label,
+          value
         }
-      })
+        // specify the discount type and min amount is optional
+        ;['type', 'min_amount'].forEach(prop => {
+          if (discount[prop]) {
+            response.discount_option[prop] = discount[prop]
+          }
+        })
+      }
     }
   }
 
