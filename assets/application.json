@@ -127,6 +127,12 @@
               },
               "title": "Desconto"
             },
+            "cumulative_discount": {
+              "type": "boolean",
+              "default": true,
+              "title": "Desconto cumulativo",
+              "description": "Se a promoção poderá ser aplicada junto a cupons e campanhas de desconto"
+            },
             "min_amount": {
               "type": "integer",
               "minimum": 1,
