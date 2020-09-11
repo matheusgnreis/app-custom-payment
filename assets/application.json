@@ -34,8 +34,8 @@
     "payment_options": {
       "schema": {
         "type": "array",
-        "title": "Opções de Pagamento Customizadas",
-        "description": "Configure e ofereça novas opções de pagamento em sua loja",
+        "title": "Opções de pagamento customizadas",
+        "description": "Configure e oferença novas opções que pagamento em sua loja",
         "uniqueItems": true,
         "items": {
           "type": "object",
