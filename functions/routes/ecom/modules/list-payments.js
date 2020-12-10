@@ -29,31 +29,47 @@ exports.post = ({ appSdk }, req, res) => {
         if (paymentOption.min_amount && (amount.total < paymentOption.min_amount)) {
           return
         }
+
+        let paymentMethodName = paymentOption.payment_method.name
+        const nameExist = response.payment_gateways.find(gateway =>
+          (gateway.payment_method && (gateway.payment_method && gateway.payment_method.name.startsWith(paymentOption.payment_method.name)))
+        )
+
+        if (nameExist) {
+          paymentMethodName += `_${Math.floor(Math.random() * 10)}`
+        }
+
+        const paymentMethod = {
+          code: paymentOption.payment_method.code,
+          name: paymentMethodName
+        }
+
         const paymentGateway = {
           label,
           icon,
           text,
-          payment_method: paymentOption.payment_method,
+          payment_method: paymentMethod,
           type: 'payment'
         }
 
-        if (!amount.discount || paymentOption.cumulative_discount !== false) {
+        if (!amount.discount || (amount.discount && (paymentOption.cumulative_discount && paymentOption.cumulative_discount !== false))) {
           paymentGateway.discount = discount
           if (discount && discount.value > 0) {
             // calculate discount value
-            if (discount.apply_at !== 'freight') {
+            if (discount.apply_at !== 'freight' &&
+              (!response.discount_option || (response.discount_option.value <= discount.value))) {
               // default discount option
               const { value } = discount
               response.discount_option = {
                 label,
                 value
               }
-              // specify the discount type and min amount is optional
-              ;['type', 'min_amount'].forEach(prop => {
-                if (discount[prop]) {
-                  response.discount_option[prop] = discount[prop]
-                }
-              })
+                // specify the discount type and min amount is optional
+                ;['type', 'min_amount'].forEach(prop => {
+                  if (discount[prop]) {
+                    response.discount_option[prop] = discount[prop]
+                  }
+                })
             }
           }
         }

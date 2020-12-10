@@ -187,7 +187,8 @@ const app = {
                 name: {
                   type: 'string',
                   maxLength: 200,
-                  title: 'Nome do método de pagamento'
+                  title: 'Nome do método de pagamento',
+                  description: 'O nome do método de pagamento é utilizado como ID da forma de pagamento. Evite repetir o nome do metódo de pagamento entre as formas cadastradas!'
                 }
               },
               title: 'Método de pagamento'
