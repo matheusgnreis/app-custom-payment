@@ -52,7 +52,7 @@ exports.post = ({ appSdk }, req, res) => {
           type: 'payment'
         }
 
-        if (!amount.discount || (amount.discount && (paymentOption.cumulative_discount && paymentOption.cumulative_discount !== false))) {
+        if (amount.discount <= 0 || (amount.discount > 0 && (paymentOption.cumulative_discount && paymentOption.cumulative_discount === true))) {
           paymentGateway.discount = discount
           if (discount && discount.value > 0) {
             // calculate discount value
