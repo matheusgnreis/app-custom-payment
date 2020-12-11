@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/ecomplus/application-starter/compare/v1.0.1...v1.3.0) (2020-12-11)
+
+
+### Features
+
+* **admin-settings:** add 'zip_range' to payment options config ([7967f9d](https://github.com/ecomplus/application-starter/commit/7967f9d30151984b78f2080a1680d2e20bf06671))
+* **discount:** add option for non-cumulative discount ([#20](https://github.com/ecomplus/application-starter/issues/20)) ([cf4a92e](https://github.com/ecomplus/application-starter/commit/cf4a92e7c650dcff6a1d37c5a225ccada8a29aaf))
+* **list-payment:** optionally handling address specific payment option ([3fa172e](https://github.com/ecomplus/application-starter/commit/3fa172e042e93c17c09fb7aaeb966376be8bf6b5))
+
+
+### Bug Fixes
+
+* **apply-discounts:** fix setting discount option and checking cumulative ([#19](https://github.com/ecomplus/application-starter/issues/19)) ([ee9b7b6](https://github.com/ecomplus/application-starter/commit/ee9b7b63b8352619d2cd5d4dce85981209c3e1ab))
+* **deps:** update @ecomplus/application-sdk and firebase-admin major ([f46590f](https://github.com/ecomplus/application-starter/commit/f46590fca10a02869bfdb3e7e6a03604ec2a665e))
+* **deps:** update @ecomplus/application-sdk firestore verison ([1c2d4ee](https://github.com/ecomplus/application-starter/commit/1c2d4ee570fd34289647d78880439dfbfcca07e8))
+* **deps:** update all non-major dependencies ([#10](https://github.com/ecomplus/application-starter/issues/10)) ([2954b8a](https://github.com/ecomplus/application-starter/commit/2954b8aad62983e60359776aace955154cb07ac6))
+* **deps:** update all non-major dependencies ([#23](https://github.com/ecomplus/application-starter/issues/23)) ([ad757cf](https://github.com/ecomplus/application-starter/commit/ad757cff78b250559f65535f8bc91d4505565f27))
+* **list-payments:** fix pushing payment gateway objects ([466db39](https://github.com/ecomplus/application-starter/commit/466db398de068145896ffdefd0dc1764d3b18b5d))
+* **list-payments:** payment method label for default discount option ([e7084db](https://github.com/ecomplus/application-starter/commit/e7084db854eb6bcb7195b3b09581b2d4e52d3869))
+* **list-payments:** relaxing zip condition filter ([8d837fd](https://github.com/ecomplus/application-starter/commit/8d837fd87bfac444445633700f515d9e6e6ecd1f))
+* **list-payments.js:** check if the discount is greater than 0 ([07696b4](https://github.com/ecomplus/application-starter/commit/07696b4055949d5471059e6eef03b661366e2ffa))
+* **refresh-tokens:** add scheduled cloud function to run update ([322f882](https://github.com/ecomplus/application-starter/commit/322f882a13639346fbace66ebb3c465de9d8025d))
+* **setup:** do not disable updates on refresh-tokens route ([a388827](https://github.com/ecomplus/application-starter/commit/a3888273958ae09136f2af9923be5f6771c6f9e8))
+* cumulative_discount, amount.discount ([2d74ece](https://github.com/ecomplus/application-starter/commit/2d74ece737308d0380c56e686e0d28463af65ee2))
+* description text ([d5fd4f9](https://github.com/ecomplus/application-starter/commit/d5fd4f9f31f5c3164d83267256296ec98db392d3))
+
 ### [1.2.1](https://github.com/ecomplus/application-starter/compare/v1.2.0...v1.2.1) (2020-11-05)
 
 
