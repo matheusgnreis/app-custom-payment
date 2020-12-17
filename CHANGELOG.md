@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/ecomplus/application-starter/compare/v1.3.0...v1.3.1) (2020-12-17)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#27](https://github.com/ecomplus/application-starter/issues/27)) ([b94339e](https://github.com/ecomplus/application-starter/commit/b94339ed15b2cadfcde1871918bd1c872c288f2c))
+* **deps:** update all non-major dependencies ([#31](https://github.com/ecomplus/application-starter/issues/31)) ([ca86478](https://github.com/ecomplus/application-starter/commit/ca86478a36be26d1efc55242ff17dc6fe0d25aef))
+* **list-payments:** dont check cumulative discount when 'amount.discount' undefined ([#32](https://github.com/ecomplus/application-starter/issues/32)) ([eb99d1f](https://github.com/ecomplus/application-starter/commit/eb99d1ffb2117af17849d3a24ab58cade257e9fc))
+
 ## [1.3.0](https://github.com/ecomplus/application-starter/compare/v1.0.1...v1.3.0) (2020-12-11)
 
 
