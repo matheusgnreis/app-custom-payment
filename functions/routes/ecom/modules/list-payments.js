@@ -52,7 +52,7 @@ exports.post = ({ appSdk }, req, res) => {
           type: 'payment'
         }
 
-        if (amount.discount <= 0 || (amount.discount > 0 && (paymentOption.cumulative_discount && paymentOption.cumulative_discount === true))) {
+        if (!amount.discount || paymentOption.cumulative_discount !== false) {
           paymentGateway.discount = discount
           if (discount && discount.value > 0) {
             // calculate discount value
@@ -64,12 +64,12 @@ exports.post = ({ appSdk }, req, res) => {
                 label,
                 value
               }
-                // specify the discount type and min amount is optional
-                ;['type', 'min_amount'].forEach(prop => {
-                  if (discount[prop]) {
-                    response.discount_option[prop] = discount[prop]
-                  }
-                })
+              // specify the discount type and min amount is optional
+              ;['type', 'min_amount'].forEach(prop => {
+                if (discount[prop]) {
+                  response.discount_option[prop] = discount[prop]
+                }
+              })
             }
           }
         }
