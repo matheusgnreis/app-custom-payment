@@ -11,7 +11,7 @@ const app = {
   slug: 'custom-payment',
   type: 'external',
   state: 'active',
-  authentication: true,
+  authentication: false,
   /**
    * Uncomment modules above to work with E-Com Plus Mods API on Storefront.
    * Ref.: https://developers.e-com.plus/modules-api/
