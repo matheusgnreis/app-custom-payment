@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/ecomplus/application-starter/compare/v1.3.1...v1.4.0) (2021-02-05)
+
+
+### Features
+
+* **create-transaction:** handle configured payment link and redirect to payment ([cffc072](https://github.com/ecomplus/application-starter/commit/cffc072a490b052ce825f78b4bdde38d01875f98))
+* **ecom-config:** add `payment_link` field to admin settings payment option schema ([b4164f6](https://github.com/ecomplus/application-starter/commit/b4164f6c86ab9f1ab8784d042d484413639839b6))
+
+
+### Bug Fixes
+
+* **ecom-config:** unset app authentication ([ba57513](https://github.com/ecomplus/application-starter/commit/ba575134ab378e42e0042f171b0542f1a6d4e912))
+* **list-payments:** prevent error with undefined `paymentOption.payment_method` ([487f16a](https://github.com/ecomplus/application-starter/commit/487f16adecebf89437d178c433276b0263df3e1a))
+
 ### [1.3.1](https://github.com/ecomplus/application-starter/compare/v1.3.0...v1.3.1) (2020-12-17)
 
 
