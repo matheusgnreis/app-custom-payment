@@ -38,7 +38,7 @@ exports.post = ({ appSdk }, req, res) => {
         if (response.payment_gateways.find(gateway => {
           return gateway.payment_method && gateway.payment_method.name === paymentMethodName
         })) {
-          paymentMethodName += ` ${Math.floor(Math.random() * 1000)}`
+          paymentMethodName += ` ::${Math.floor(Math.random() * 1000)}`
         }
 
         const paymentGateway = {
