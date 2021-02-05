@@ -146,7 +146,7 @@ const app = {
         uniqueItems: true,
         items: {
           type: 'object',
-          required: ['label', 'text', 'payment_method', 'enabled'],
+          required: ['label', 'payment_method', 'enabled'],
           properties: {
             label: {
               type: 'string',
@@ -164,8 +164,15 @@ const app = {
               type: 'string',
               maxLength: 255,
               format: 'uri',
-              description: 'Url para icone da forma de pagamento',
-              title: 'Icone'
+              description: 'URL para ícone da forma de pagamento',
+              title: 'Ícone'
+            },
+            payment_link: {
+              type: 'string',
+              maxLength: 255,
+              format: 'uri',
+              description: 'URL de redirecionamento para pagamento, pode-se usar as variáveis {amount} e {email}',
+              title: 'Link de pagamento'
             },
             payment_method: {
               type: 'object',
