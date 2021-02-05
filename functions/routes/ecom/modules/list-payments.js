@@ -26,29 +26,29 @@ exports.post = ({ appSdk }, req, res) => {
 
       const { label, icon, text, discount, enabled } = paymentOption
       if (enabled !== false) {
+        const paymentMethod = paymentOption.payment_method
+        if (!paymentMethod || !paymentMethod.code) {
+          return
+        }
         if (paymentOption.min_amount && (amount.total < paymentOption.min_amount)) {
           return
         }
 
-        let paymentMethodName = paymentOption.payment_method.name
-        const nameExist = response.payment_gateways.find(gateway =>
-          (gateway.payment_method && (gateway.payment_method && gateway.payment_method.name.startsWith(paymentOption.payment_method.name)))
-        )
-
-        if (nameExist) {
-          paymentMethodName += `_${Math.floor(Math.random() * 10)}`
-        }
-
-        const paymentMethod = {
-          code: paymentOption.payment_method.code,
-          name: paymentMethodName
+        let paymentMethodName = paymentMethod.name || paymentMethod.code
+        if (response.payment_gateways.find(gateway => {
+          return gateway.payment_method && gateway.payment_method.name === paymentMethodName
+        })) {
+          paymentMethodName += ` ${Math.floor(Math.random() * 1000)}`
         }
 
         const paymentGateway = {
           label,
           icon,
           text,
-          payment_method: paymentMethod,
+          payment_method: {
+            code: paymentMethod.code,
+            name: paymentMethodName
+          },
           type: 'payment'
         }
 
