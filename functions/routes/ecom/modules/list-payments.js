@@ -56,20 +56,15 @@ exports.post = ({ appSdk }, req, res) => {
           paymentGateway.discount = discount
           if (discount && discount.value > 0) {
             // calculate discount value
-            if (discount.apply_at !== 'freight' &&
-              (!response.discount_option || (response.discount_option.value <= discount.value))) {
+            if (
+              discount.apply_at !== 'freight' &&
+              (!response.discount_option || (response.discount_option.value <= discount.value))
+            ) {
               // default discount option
-              const { value } = discount
               response.discount_option = {
                 label,
-                value
+                ...discount
               }
-              // specify the discount type and min amount is optional
-              ;['type', 'min_amount'].forEach(prop => {
-                if (discount[prop]) {
-                  response.discount_option[prop] = discount[prop]
-                }
-              })
             }
           }
         }
