@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/ecomplus/application-starter/compare/v1.4.0...v1.4.1) (2021-02-14)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#35](https://github.com/ecomplus/application-starter/issues/35)) ([e95ca30](https://github.com/ecomplus/application-starter/commit/e95ca30305c9aa719d6016aca44486ddf89e8641))
+* **list-payments:** set configured  on  object ([4c5a10f](https://github.com/ecomplus/application-starter/commit/4c5a10f26109a1752638c16cd1d896b72a553d20))
+
 ## [1.4.0](https://github.com/ecomplus/application-starter/compare/v1.3.1...v1.4.0) (2021-02-05)
 
 
