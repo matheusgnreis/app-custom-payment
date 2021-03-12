@@ -9,12 +9,16 @@ exports.post = ({ appSdk }, req, res) => {
   }
 
   let notes, paymentLink
-  if (config.payment_options) {
-    const paymentOption = config.payment_options.find(paymentOption => {
-      return paymentOption.payment_method &&
-        paymentOption.payment_method.name === paymentMethodName &&
-        paymentOption.payment_method.code === params.payment_method.code
+  if (Array.isArray(config.payment_options) && config.payment_options.length) {
+    let paymentOption = config.payment_options.find(paymentOption => {
+      const paymentMethod = paymentOption.payment_method
+      return paymentMethod &&
+        paymentMethod.code === params.payment_method.code &&
+        (!paymentMethod.name || paymentMethod.name === paymentMethodName)
     })
+    if (!paymentOption) {
+      paymentOption = config.payment_options[0]
+    }
     if (typeof paymentOption.text === 'string') {
       notes = paymentOption.text.substr(0, 255)
     }
