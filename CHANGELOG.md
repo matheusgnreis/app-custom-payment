@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.2](https://github.com/ecomplus/application-starter/compare/v1.4.1...v1.4.2) (2021-03-12)
+
+
+### Bug Fixes
+
+* **create-transaction:** prevent undefined `paymentOption` when no method name set ([e3428ee](https://github.com/ecomplus/application-starter/commit/e3428ee4e21f578504eca8c62d888e73e354aea4))
+* **deps:** update all non-major dependencies ([#39](https://github.com/ecomplus/application-starter/issues/39)) ([f9b65fe](https://github.com/ecomplus/application-starter/commit/f9b65fed589744c942f436fffeabf78d1a89025f))
+
 ### [1.4.1](https://github.com/ecomplus/application-starter/compare/v1.4.0...v1.4.1) (2021-02-14)
 
 
