@@ -26,7 +26,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '8.x'
+          node-version: '12.x'
 
       - name: Install root dependencies
         run: npm i --only=production
