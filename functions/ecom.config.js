@@ -7,7 +7,7 @@
 
 const app = {
   app_id: 108091,
-  title: 'Pagamento personalizado mgnr',
+  title: 'Pagamento personalizado mg',
   slug: 'custom-payment',
   type: 'external',
   state: 'active',
