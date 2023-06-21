@@ -263,6 +263,77 @@ const app = {
               type: 'boolean',
               title: 'Habilitado',
               default: true
+            },
+            installments_option: {
+              schema: {
+                type: 'object',
+                required: [
+                  'max_number'
+                ],
+                additionalProperties: false,
+                properties: {
+                  min_installment: {
+                    type: 'number',
+                    minimum: 1,
+                    maximum: 99999999,
+                    default: 5,
+                    title: 'Parcela mínima',
+                    description: 'Valor mínimo da parcela'
+                  },
+                  max_number: {
+                    type: 'integer',
+                    minimum: 2,
+                    maximum: 999,
+                    title: 'Máximo de parcelas',
+                    description: 'Número máximo de parcelas (como configurado na conta Mercado Pago)'
+                  },
+                  monthly_interest: {
+                    type: 'number',
+                    minimum: 0,
+                    maximum: 9999,
+                    default: 0,
+                    title: 'Juros mensais',
+                    description: 'Taxa de juros mensal, zero para parcelamento sem juros'
+                  }
+                },
+                title: 'Parcelamento padrão',
+                description: 'Opção de parcelamento equivalente à configuração em sua conta Mercado Pago'
+              },
+              hide: false
+            },
+            installments: {
+              schema: {
+                title: 'Opções de parcelamento',
+                description: 'Parcelamento disponível na sua conta MP (preenchimento opcional)',
+                type: 'array',
+                maxItems: 50,
+                items: {
+                  title: 'Opção de parcelamento',
+                  type: 'object',
+                  required: [
+                    'number',
+                    'interest'
+                  ],
+                  additionalProperties: false,
+                  properties: {
+                    number: {
+                      type: 'integer',
+                      minimum: 2,
+                      maximum: 999,
+                      description: 'Número de parcelas'
+                    },
+                    interest: {
+                      type: 'number',
+                      minimum: 0,
+                      maximum: 9999,
+                      default: 0,
+                      title: 'Taxa de juros',
+                      description: 'Juros percentual total, zero para sem juros'
+                    }
+                  }
+                }
+              },
+              hide: false
             }
           }
         }
